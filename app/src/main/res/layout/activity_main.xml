@@ -13,9 +13,17 @@
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar_inc"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:src="@drawable/pizza"/>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pizzeria app"/>
+        android:entries="@array/products"/>
 
 </LinearLayout>

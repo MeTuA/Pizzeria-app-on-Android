@@ -2,4 +2,9 @@
     <string name="app_name">Pizzeria</string>
     <string name="create_order">Create Order</string>
     <string name="share">Share</string>
+    <string-array name="products">
+        <item>Drinks</item>
+        <item>Pizzas</item>
+        <item>Stores</item>
+    </string-array>
 </resources>
