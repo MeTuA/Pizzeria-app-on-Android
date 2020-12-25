@@ -12,3 +12,6 @@ Also was implemented ListView of products in a pizzeria on the main activity(Mai
 Implemented DrinkCategoryActivity, which shows the category of drinks, and DrinkActivity which shows details of drinks.
 Drink class gives information about drinks.
 
+How its look like on the second commit:
+
+<img src="images/pizzeriaLook.png" width="30%">
