@@ -15,3 +15,11 @@ Drink class gives information about drinks.
 How its look like on the second commit:
 
 <img src="images/pizzeriaLook.png" width="30%">
+
+#Third Commit
+On third commit I added new icon of drinking bottle on DrinkCategoryActivity.
+Also, added back button.
+
+How DrinkCategoryActivity looks like on third commit:
+
+<img src="images/pizzeriaDrinks.png" width="30%">
