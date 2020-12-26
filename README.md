@@ -20,9 +20,9 @@ How its look like on the second commit:
 
 ## Third Commit
 
-On third commit I added new icon of drinking bottle on DrinkCategoryActivity.
-Also, added back button.
+On the third commit, I added a new icon of the drinking bottle on DrinkCategoryActivity. 
+Also, added a back button.
 
-How DrinkCategoryActivity looks like on third commit:
+How DrinkCategoryActivity looks like on the third commit:
 
 <img src="images/pizzeriaDrinks.png" width="30%">
