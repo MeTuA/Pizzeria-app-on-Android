@@ -7,4 +7,6 @@
         <item>Pizzas</item>
         <item>Stores</item>
     </string-array>
+
+    <string name="drinks">Drinks</string>
 </resources>

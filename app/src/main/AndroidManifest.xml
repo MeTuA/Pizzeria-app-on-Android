@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzeria">
-        <activity android:name=".DrinkActivity"></activity>
-        <activity android:name=".DrinkCategoryActivity" />
+        <activity android:name=".PizzaActivity"></activity>
+        <activity android:name=".PizzasCategoryActivity" />
+        <activity android:name=".DrinkActivity" />
+        <activity
+            android:name=".DrinkCategoryActivity"
+            android:label="@string/drinks"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".OrderActivity"
             android:label="@string/create_order"
