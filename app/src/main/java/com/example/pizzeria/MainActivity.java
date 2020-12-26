@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
                     Intent intentDrink = new Intent(MainActivity.this, DrinkCategoryActivity.class);
                     startActivity(intentDrink);
                 }
+                if(position == 1){
+                    Intent intentPizza = new Intent(MainActivity.this, PizzasCategoryActivity.class);
+                    startActivity(intentPizza);
+                }
             }
         };
         ListView listView = (ListView) findViewById(R.id.list_view);
