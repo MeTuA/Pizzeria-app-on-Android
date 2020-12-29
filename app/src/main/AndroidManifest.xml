@@ -9,17 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzeria">
-        <activity android:name=".PizzaActivity"></activity>
-        <activity android:name=".PizzasCategoryActivity" />
-        <activity android:name=".DrinkActivity" />
-        <activity
-            android:name=".DrinkCategoryActivity"
-            android:label="@string/drinks"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".OrderActivity"
-            android:label="@string/create_order"
-            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OrderActivity"
+            android:label="@string/create_order"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>
