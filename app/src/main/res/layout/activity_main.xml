@@ -13,17 +13,10 @@
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar_inc"/>
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:src="@drawable/pizza"/>
-
-    <ListView
-        android:id="@+id/list_view"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/products"/>
+        android:layout_height="match_parent"/>
+
 
 </LinearLayout>

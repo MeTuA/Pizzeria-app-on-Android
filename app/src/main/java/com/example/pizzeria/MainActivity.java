@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
-
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,60 +16,78 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+
 public class MainActivity extends AppCompatActivity {
-
     private ShareActionProvider shareActionProvider;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_inc);
-        setSupportActionBar(toolbar);
 
-        AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
-                    Intent intentDrink = new Intent(MainActivity.this, DrinkCategoryActivity.class);
-                    startActivity(intentDrink);
-                }
-                if(position == 1){
-                    Intent intentPizza = new Intent(MainActivity.this, PizzasCategoryActivity.class);
-                    startActivity(intentPizza);
-                }
-            }
-        };
-        ListView listView = (ListView) findViewById(R.id.list_view);
-        listView.setOnItemClickListener(onItemClickListener);
+
+
+
+        //Связывание SectionsPagerAdapter с ViewPager
+        SectionsPagerAdapter pagerAdapter =
+                new SectionsPagerAdapter(getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(pagerAdapter);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
-        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-        setShareActionIntent("Hello, lets eat pizza!");
+        shareActionProvider =
+                (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+        setShareActionIntent("Want to join me for pizza?");
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void setShareActionIntent(String text){
+    private void setShareActionIntent(String text) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, text);
         shareActionProvider.setShareIntent(intent);
     }
 
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case R.id.action_create_orderr:
-                Intent intent = new Intent(this,OrderActivity.class);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_create_order:
+                Intent intent = new Intent(this, OrderActivity.class);
                 startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+        @Override
+        public int getCount() {
+            return 4;
+        }
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new TopFragment();
+                case 1:
+                    return new PizzaFragment();
+                case 2:
+                    return new PastaFragment();
+                case 3:
+                    return new StoresFragment();
+            }
+            return null;
         }
     }
 }
