@@ -26,3 +26,6 @@ Also, added a back button.
 How DrinkCategoryActivity looks like on the third commit:
 
 <img src="images/pizzeriaDrinks.png" width="30%">
+
+## Fourth Commit
+On fourth commit I added the ViewPager.
