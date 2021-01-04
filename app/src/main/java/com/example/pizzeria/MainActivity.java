@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.android.material.tabs.TabLayout;
+
 
 public class MainActivity extends AppCompatActivity {
     private ShareActionProvider shareActionProvider;
@@ -24,17 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //Связывание SectionsPagerAdapter с ViewPager
         SectionsPagerAdapter pagerAdapter =
                 new SectionsPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(pagerAdapter);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(pager);
     }
 
     @Override
@@ -86,6 +89,21 @@ public class MainActivity extends AppCompatActivity {
                     return new PastaFragment();
                 case 3:
                     return new StoresFragment();
+            }
+            return null;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position){
+            switch (position){
+                case 0:
+                    return getResources().getText(R.string.home_tab);
+                case 1:
+                    return getResources().getText(R.string.pizza_tab);
+                case 2:
+                    return getResources().getText(R.string.pasta_tab);
+                case 3:
+                    return getResources().getText(R.string.store_tab);
             }
             return null;
         }
