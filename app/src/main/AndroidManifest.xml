@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzeria">
+        <activity android:name=".PizzaDetailActivity"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +22,6 @@
             android:name=".OrderActivity"
             android:label="@string/create_order"
             android:parentActivityName=".MainActivity" />
-
     </application>
 
 </manifest>
