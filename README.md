@@ -29,3 +29,12 @@ How DrinkCategoryActivity looks like on the third commit:
 
 ## Fourth Commit
 On fourth commit I added the ViewPager.
+
+## Fifth Commit
+On the fifth commit, I improved the ViewPager view by adding CardView with RecyclerView.
+
+How its look like:
+
+<img src="images/viewPages.png" width="30%">
+
+<img src="images/pizzasCardView.png" width="30%">
